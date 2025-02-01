@@ -13,8 +13,7 @@ def get_requirements(file_path:str)->List[str]:
     with open(file_path,'r') as file:
         requirements = file.read().splitlines()
         if HYPHEN_E_DOT in requirements:
-            requirements.remove(HYPHEN_E_DOT)
-        print(requirements)    
+            requirements.remove(HYPHEN_E_DOT)  
         return  requirements
 
 
