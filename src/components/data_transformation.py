@@ -110,5 +110,8 @@ if __name__ == "__main__":
     data_ingestion = DataIngestion()
     data_ingestion.initiate_data_ingestion()
     transformation = DataTransformation()
-    transformation.initiate_data_transformation(train_path=data_ingestion.ingestion_config.train_data_path,
+    train_arr, test_arr,_ = transformation.initiate_data_transformation(train_path=data_ingestion.ingestion_config.train_data_path,
                                                 test_path=data_ingestion.ingestion_config.test_data_path)        
+    from src.components.model_trainer import ModelTrainer,ModelTrainerConfig
+    model_trainer = ModelTrainer().initiate_model_trainer(train_array=train_arr,test_array=test_arr)
+    print(model_trainer)
