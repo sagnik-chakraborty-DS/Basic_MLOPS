@@ -44,4 +44,5 @@ if __name__=="__main__":
 
 """
 docker run -p 8080:8080 sagnikds/studentperformance:latest
+ecr->ec2
 """
